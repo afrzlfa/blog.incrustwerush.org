@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+  <title>10 Kerentanan Teratas OWASP pada tahun 2024 [ incrustwerush.org - Science, Social, Technology, and BrotherHood ]</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/iLiKE.css">
+    
+  
+  
+  
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+    <script id="leancloud">
+      AV.init({
+          appId: "6E5zTbTljdUbVW2WkXPsXGJk-gzGzoHsz",
+          appKey: "0vsyDKfNpeSECAI70J794ugv"
+      });
+    </script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div class="header">
+        <div class="container">
+    <div class="menu">
+      <div class="menu-left">
+        <a href="/">
+          <b>incrustwerush.org</b>
+        </a>
+      </div>
+      <div class="menu-right">
+        
+          
+          
+          
+          
+          
+          
+          <a href="/">Home</a>
+        
+          
+          
+          
+          
+          
+          
+          <a href="/archives">Archives</a>
+        
+          
+          
+          
+          
+          
+          
+          <a href="/about">About</a>
+        
+      </div>
+    </div>
+</div>
+    </div>
+    <div class="container">
+        <h1 class="post-title">10 Kerentanan Teratas OWASP pada tahun 2024</h1>
+<article class="post markdown-style">
+  <p>Dengan meningkatnya penggunaan aplikasi cloud-native di industri, jumlah risiko digital dan serangan juga semakin meningkat. Karena sebagian besar aplikasi cloud terintegrasi dengan berbagai layanan dan perpustakaan pihak ketiga, ini memberikan celah bagi para penyerang untuk mengeksploitasinya.</p>
+<p>Meskipun para pengembang menciptakan strategi mitigasi baru untuk melindungi aplikasi, tetapi menjaga langkah dengan para penyerang untuk mencegah mereka mengeksplorasi kerentanan merupakan tugas yang menakutkan. Beruntung, rilis OWASP Top 10 vulnerabilities untuk tahun 2024 telah menjadi penyelamat karena memberikan informasi terbaru tentang semua kerentanan signifikan pada saat ini.</p>
+<p>Sumber daya ini sangat berharga bagi para pengembang karena membantu mereka mengembangkan aplikasi dan menguji aplikasi tersebut dengan mempertimbangkan semua kerentanan ini. Ini berfungsi sebagai referensi untuk mengembangkan aplikasi yang aman dan melindungi semua data dari kerentanan yang menawarkan risiko maksimal.</p>
+<p>Jadi, mari kita mulai dengan mengetahui;</p>
+<h2 id="Apa-Itu-OWASP"><a href="#Apa-Itu-OWASP" class="headerlink" title="Apa Itu OWASP?"></a>Apa Itu OWASP?</h2><p>Open Web Application Security Project, atau OWASP, adalah yayasan global nirlaba yang melakukan penelitian ekstensif untuk menemukan ancaman keamanan berbahaya untuk membantu organisasi meningkatkan keamanan aplikasi web. Melalui platform mereka, mereka menyediakan banyak alat, program open-source, teknik, riset, dan konferensi untuk membantu pengembang meningkatkan keamanan aplikasi cloud.</p>
+<p>Motif utama OWASP adalah membuat penelitian mereka bebas dan dapat diakses oleh semua orang. OWASP didirikan pada 9 September 2001 oleh Mark Curphey, seorang penggemar keamanan cyber yang ingin mengendalikan meningkatnya serangan cyber. Yayasan nirlaba ini didukung oleh ribuan individu keamanan web terkemuka, dan itulah mengapa dianggap sebagai sumber penting dalam hal panduan keamanan aplikasi dan API cloud.</p>
+<p>OWASP Top 10 adalah proyek utama yang dilakukan oleh organisasi ini, dan pada dasarnya berfungsi sebagai dokumen kesadaran yang mencantumkan sepuluh kerentanan aplikasi web teratas yang dapat menyebabkan pelanggaran signifikan. Daftar ini tidak hanya menawarkan daftar potensi ancaman teratas tetapi juga cara untuk memecahkan masalah tersebut. Setiap tahun, OWASP merevisi daftar tersebut dan menampilkan sepuluh kerentanan aplikasi web teratas yang paling umum dan memiliki dampak maksimal.</p>
+<h2 id="OWASP-Top-10-Vulnerabilities"><a href="#OWASP-Top-10-Vulnerabilities" class="headerlink" title="OWASP Top 10 Vulnerabilities"></a>OWASP Top 10 Vulnerabilities</h2><p>Untuk tahun 2024, OWASP telah membuat daftar baru dari 10 kerentanan teratas di mana mereka mencantumkan ancaman keamanan paling berdampak pada aplikasi cloud. Kerentanannya telah diurutkan berdasarkan dampak dan jumlah kejadian. Jadi, berikut adalah 10 kerentanan OWASP yang harus diketahui setiap pengembang dan tim keamanan web;</p>
+<ol>
+<li><strong>Broken Access Control</strong></li>
+<li><strong>Cryptographic Failure</strong></li>
+<li><strong>Injection</strong></li>
+<li><strong>Insecure Design</strong></li>
+<li><strong>Security Misconfiguration</strong></li>
+<li><strong>Vulnerable and Outdated Components</strong></li>
+<li><strong>Identification and Authentication Failure</strong></li>
+<li><strong>Software and Data Integrity Failure</strong></li>
+<li><strong>Security Logging and Monitoring Failures</strong></li>
+<li><strong>Server-Side Request Forgery</strong></li>
+</ol>
+<p>Sekarang, mari kita lihat semua kerentanan OWASP Top 10 ini secara detail;</p>
+<h3 id="1-Broken-Access-Control"><a href="#1-Broken-Access-Control" class="headerlink" title="1. Broken Access Control"></a>1. Broken Access Control</h3><p>Broken access control adalah risiko keamanan paling umum dan berbahaya yang dihadapi aplikasi web. Hampir 94% aplikasi web memiliki beberapa bentuk broken access control, dan kelemahan ini telah memungkinkan banyak penyerang untuk mengeksploitasinya. Pengembang menerapkan kontrol akses pada aplikasi web untuk membatasi pengguna agar hanya mengakses data dan halaman yang dibutuhkan.</p>
+<p>Namun, kegagalan dalam menerapkan kontrol akses dengan efisien menyebabkan akses yang tidak sah, membuka peluang bagi penyerang untuk melakukan modifikasi data dan pengungkapan informasi. Sekitar 34 CWE terkait broken access control telah merugikan keamanan aplikasi web lebih dari yang lain. Cara yang nyaman untuk mengatasi kerentanan ini adalah dengan membangun kontrol akses yang kuat dengan autentikasi berbasis peran dan menerapkan pendekatan paling sedikit hak.</p>
+<h3 id="2-Cryptographic-Failure"><a href="#2-Cryptographic-Failure" class="headerlink" title="2. Cryptographic Failure"></a>2. Cryptographic Failure</h3><p>Sebelumnya dikenal sebagai Sensitive Data Exposure, kerentanan ini merujuk pada kegagalan dalam kriptografi yang menyebabkan paparan data sensitif. Kurangnya penggunaan kriptografi dan enkripsi untuk data penting menyebabkan paparan dan memungkinkan penyerang untuk mengaksesnya. Data penting seperti rahasia bisnis, informasi kartu, catatan kesehatan, dan informasi pribadi yang bergerak atau diam memerlukan perlindungan khusus, terutama ketika termasuk dalam CCPA, GDPR, atau PCI-DSS.</p>
+<p>Ketika data-data ini disimpan dengan manajemen kunci yang buruk, seperti kunci yang sudah ketinggalan zaman, atau tanpa algoritma kriptografi terbaru, maka akan menyebabkan kerentanan yang mengungkapkan data. Cara terbaik untuk menyelesaikannya adalah dengan mengenkripsi semua data dalam transit dan juga data yang diam melalui algoritma dan protokol terenkripsi.</p>
+<h3 id="3-Injection"><a href="#3-Injection" class="headerlink" title="3. Injection"></a>3. Injection</h3><p>Injection adalah kerentanan kedua yang paling sering terjadi yang memengaruhi banyak aplikasi web dan menyebabkan penolakan layanan, pencurian data, kehilangan data, dan bentuk serangan lainnya. Menurut riset pasar, 94% aplikasi web tahun lalu terkena beberapa bentuk injection.</p>
+<p>Melalui kerentanan ini, penyerang dapat menyuntikkan data, kueri, atau perintah berbahaya ke dalam interpreter, yang mendorongnya untuk melakukan tindakan yang tidak ditentukan seperti memberikan akses data tanpa otentikasi. SQL dan XSS adalah serangan injeksi yang paling umum dan berbahaya. Menggunakan sistem deteksi intrusi, API yang aman, dan validasi input server-side membantu pengembang menangani kerentanan ini.</p>
+<h3 id="4-Insecure-Design"><a href="#4-Insecure-Design" class="headerlink" title="4. Insecure Design"></a>4. Insecure Design</h3><p>Ini menginformasikan tentang kerentanan yang sering muncul karena menerapkan desain kontrol yang tidak efektif, yang pada akhirnya menyebabkan berbagai kerentanan. Insecure design adalah istilah yang luas yang mencakup banyak kekurangan dan pada dasarnya merujuk pada kesenjangan keamanan dalam desain.</p>
+<p>Kerentanan ini membimbing pengembang untuk membangun aplikasi yang aman dan juga menentukan tingkat keamanan sebelum memulai pengembangan karena ini akan membantu mencegah kontrol keamanan yang buruk. Menerapkan praktik keamanan yang kuat, menggunakan pola desain yang aman, dan mengintegrasikan hak keamanan di tahap SDLC adalah cara yang lebih baik untuk memastikan desain yang aman. Threat modeling untuk berbagai fitur juga penting untuk menghindari kerentanan ini.</p>
+<h3 id="5-Security-Misconfiguration"><a href="#5-Security-Misconfiguration" class="headerlink" title="5. Security Misconfiguration"></a>5. Security Misconfiguration</h3><p>Menurut riset yang dilakukan oleh OWASP, 90% aplikasi cloud asli menderita dari konfigurasi keamanan yang salah, meskipun organisasi fokus pada perangkat lunak yang sangat dikonfigurasi. Security misconfiguration terjadi terutama karena mengkonfigurasi kontrol keamanan dengan tidak akurat, dan ini menempatkan seluruh sistem dalam risiko.</p>
+<p>Security misconfiguration juga terjadi ketika pengembang menggunakan pengaturan default, mengaktifkan fitur yang tidak diperlukan, memberikan akses ke penyimpanan cloud, dan salah mengkonfigurasi header HTTP. Kerentanan ini dapat terjadi pada setiap lapisan tumpukan aplikasi atau infrastruktur cloud dan menyebabkan pengungkapan data penting. Anda dapat mengurangi kerentanan ini dengan memperkuat keamanan aplikasi, secara teratur memperbarui konfigurasi keamanan, dan menggunakan templat yang telah dikonfigurasi sebelumnya.</p>
+<h3 id="6-Vulnerable-and-Outdated-Components"><a href="#6-Vulnerable-and-Outdated-Components" class="headerlink" title="6. Vulnerable and Outdated Components"></a>6. Vulnerable and Outdated Components</h3><p>Banyak aplikasi cloud modern menggunakan komponen open-source seperti kerangka kerja dan perpustakaan untuk operasi yang mulus. Jika salah satu komponen yang digunakan selama pengembangan sudah ketinggalan zaman atau memiliki kerentanan yang diketahui, maka aplikasi tersebut menjadi rentan terhadap serangan, mengorbankan keamanan seluruh sistem.</p>
+<p>Meskipun penggunaan komponen dengan kerentanan yang diketahui tidak menimbulkan ancaman yang signifikan seperti yang lain, ini menjadi penyebab utama untuk penyebab utama dari pelanggaran aktual. Oleh karena itu, penting bagi pengembang untuk menjaga daftar versi komponen yang digunakan dan terus-menerus memindai semua komponen inti untuk mengetahui kerentanannya. Menghapus komponen yang tidak digunakan dan sudah ketinggalan zaman juga merupakan solusi yang efektif.</p>
+<h3 id="7-Identification-and-Authentication-Failure"><a href="#7-Identification-and-Authentication-Failure" class="headerlink" title="7. Identification and Authentication Failure"></a>7. Identification and Authentication Failure</h3><p>Identification and authentication failure adalah kerentanan yang umum terjadi dalam aplikasi web, dan itu merupakan ancaman serius terhadap sumber daya serta aset yang terkait dengan jaringan. Ketika aplikasi web salah mengeksekusi fungsi otentikasi pengguna atau manajemen sesi, ini memungkinkan personel jahat untuk mengompromikan kunci, kata sandi, dan token sesi.</p>
+<p>Ini juga memungkinkan penyerang untuk mengeksploitasi izin dan mengasumsikan identitas pengguna lain, baik secara permanen maupun sementara. Namun, kerentanan ini dapat dihindari dengan mengimplementasikan otentikasi multi-faktor atau menggunakan kebijakan kata sandi yang kuat. Menghindari penggunaan kredensial default juga merupakan cara yang sangat baik untuk mengurangi kerentanan ini.</p>
+<h3 id="8-Software-and-Data-Integrity-Failure"><a href="#8-Software-and-Data-Integrity-Failure" class="headerlink" title="8. Software and Data Integrity Failure"></a>8. Software and Data Integrity Failure</h3><p>Kerentanan ini merupakan ancaman serius terhadap keamanan aplikasi web modern yang ingin OWASP sampaikan kepada setiap pengembang. Ketika integritas data penting, pembaruan perangkat lunak, paker terpasang, dan jalur CI&#x2F;CD tidak diverifikasi, dapat menyebabkan kegagalan integritas perangkat lunak dan data.</p>
+<p>Kerentanan ini terutama terjadi dalam aplikasi cloud yang menggunakan plugin, modul, atau perpustakaan dari sumber atau CDN yang tidak dapat dipercaya. Pembaruan otomatis di banyak aplikasi tanpa pemeriksaan integritas juga menyebabkan kerentanan di mana penyerang dapat menyebarkan pembaruan mereka sendiri di seluruh sistem. Memeriksa keaslian perangkat lunak dan data bersama dengan sumber melalui tanda tangan digital dapat membantu mengatasi masalah keamanan. Aplikasi Anda hanya harus menggunakan perpustakaan dan modul dari repositori terpercaya.</p>
+<h3 id="9-Security-Logging-and-Monitoring-Features"><a href="#9-Security-Logging-and-Monitoring-Features" class="headerlink" title="9. Security Logging and Monitoring Features"></a>9. Security Logging and Monitoring Features</h3><p>Kerentanan OWASP top 10 ini memberi tahu Anda tentang ketidakmampuan aplikasi cloud untuk mengidentifikasi dan merespons risiko keamanan. Menurut laporan dari IT Governance, dibutuhkan waktu sekitar 200 hari rata-rata untuk mendeteksi serangan, dan rentang waktu yang sangat besar ini memungkinkan penyerang untuk mengeksploitasi sistem.</p>
+<p>Ketika pemantauan aktivitas log tidak dilakukan dengan benar, aktivitas berbahaya terabaikan, dan akhirnya menyebabkan kerentanan ini. Menggunakan perangkat lunak audit dan logging otomatis yang memungkinkan sistem untuk mendeteksi secara instan akan membantu mengatasi risiko ini. Kontrol keamanan harus diimplementasikan untuk mencegah perusakan.</p>
+<h3 id="10-Server-Side-Request-Forgery"><a href="#10-Server-Side-Request-Forgery" class="headerlink" title="10. Server-Side Request Forgery"></a>10. Server-Side Request Forgery</h3><p>Server-side request forgery, juga dikenal sebagai SSRF, adalah kerentanan serius lainnya yang terjadi ketika aplikasi cloud mengakses data dari sumber daya remote tanpa memvalidasi URL yang disediakan.</p>
+<p>Penyerang memiliki kemampuan untuk mengirim permintaan yang dimodifikasi ke tujuan yang tidak terduga, bahkan jika aplikasi dilindungi oleh firewall atau VPN. Cara terbaik untuk mengurangi kerentanan ini adalah dengan mengimplementasikan sanitasi dan validasi input pengguna dan memblokir lalu lintas masuk yang jahat menggunakan kebijakan yang ketat.</p>
+<h2 id="Bagaimana-CloudDefense-AI-Dapat-Membantu-Anda-Tetap-Terlindungi-Dari-10-Kerentanan-OWASP-Ini"><a href="#Bagaimana-CloudDefense-AI-Dapat-Membantu-Anda-Tetap-Terlindungi-Dari-10-Kerentanan-OWASP-Ini" class="headerlink" title="Bagaimana CloudDefense.AI Dapat Membantu Anda Tetap Terlindungi Dari 10 Kerentanan OWASP Ini"></a>Bagaimana CloudDefense.AI Dapat Membantu Anda Tetap Terlindungi Dari 10 Kerentanan OWASP Ini</h2><p>Aplikasi web menjadi target utama banyak penyerang jahat di dunia digital, dan mereka menyaring aplikasi untuk mencari kerentanan. Meskipun para pengembang menggunakan banyak praktik keamanan dan alat keamanan aplikasi untuk melindungi aplikasi mereka, hal itu tidak cukup. Meskipun banyak upaya, aplikasi masih mengandung kerentanan yang dapat dieksploitasi, dan ini seringkali karena para pengembang tidak menyadari kerentanan dan praktik keamanan terbaru.</p>
+<p>Identifikasi dan penanganan kerentanan yang disebutkan dalam OWASP Top 10 adalah cara efektif untuk memastikan perlindungan aplikasi web. Namun, itu lebih mudah diucapkan daripada dilakukan, dan di situlah CloudDefense.AI masuk dengan platform keamanan siber cloud-native yang tangguh. Dengan manajemen kerentanan yang kuat, platform ini menyediakan perlindungan penuh terhadap semua kerentanan OWASP Top 10. CloudDefense.AI juga membantu Anda dengan mudah mempertahankan kepatuhan dan mengurangi risiko di seluruh aplikasi cloud Anda.</p>
+<p>Ini adalah manajemen kerentanan tanpa agen yang memungkinkan tim keamanan memiliki visibilitas lengkap dan memberi prioritas pada kerentanan sesuai dampaknya. Banyak yang memilih layanan CloudDefense.AI karena solusinya yang tanpa hambatan membantu tim keamanan mengimplementasikan standar OWASP pada tahap awal untuk membantu mereka melakukan pelacakan, pengujian, dan pengelolaan keamanan secara terus-menerus.</p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><ol>
+<li><p><strong>Apa itu OWASP’s Top 10?</strong><br>OWASP Top 10 adalah daftar yang secara teratur diperbarui dari sepuluh risiko keamanan paling kritis untuk aplikasi web. Ini diterbitkan oleh Open Web Application Security Project (OWASP), sebuah organisasi nirlaba yang berfokus pada peningkatan keamanan perangkat lunak. Daftar ini membantu pengembang, profesional keamanan, dan organisasi mengidentifikasi dan memberi prioritas pada kerentanan aplikasi web yang paling umum dan berdampak.</p>
+</li>
+<li><p><strong>Mengapa OWASP Top 10 penting?</strong><br>OWASP Top 10 memberikan panduan penting bagi pengembang dan tim keamanan untuk memahami dan mengatasi risiko keamanan paling umum dalam aplikasi web. Dengan fokus pada kerentanan ini, organisasi dapat meningkatkan postur keamanan aplikasinya dan melindungi diri dari ancaman dan serangan siber umum.</p>
+</li>
+<li><p><strong>Bagaimana pengembang dan organisasi dapat menggunakan OWASP Top 10?</strong><br>Pengembang dapat menggunakan OWASP Top 10 untuk memahami kerentanan umum dan merancang kode yang aman untuk mencegah masalah ini dalam aplikasi mereka. Tim keamanan dapat memberikan prioritas pada upaya untuk mengatasi kerentanan ini selama fase pengembangan, pengujian, dan pemeliharaan. Selain itu, organisasi dapat menggunakan OWASP Top 10 sebagai panduan untuk program pelatihan keamanan mereka dan meningkatkan postur keamanan aplikasi secara keseluruhan.</p>
+</li>
+<li><p><strong>Apakah aplikasi dengan kerentanan OWASP Top 10 dijamin tidak aman?</strong><br>Memiliki kerentanan dari OWASP Top 10 tidak otomatis membuat aplikasi tidak aman. Namun, kerentanan ini sering dieksploitasi oleh penyerang, dan penanganannya secara signifikan meningkatkan postur keamanan aplikasi.</p>
+</li>
+</ol>
+<h2 id="Kesimpulan"><a href="#Kesimpulan" class="headerlink" title="Kesimpulan"></a>Kesimpulan</h2><p>Kerentanan OWASP Top 10 menjadi penyelamat bagi banyak organisasi dan pengembang karena berfungsi sebagai referensi untuk mengatasi kerentanan dalam aplikasi mereka.</p>
+<p>Namun, alat keamanan aplikasi tradisional tidak akan cukup untuk mengatasi sebagian besar kerentanan. Tetapi platform keamanan cloud seperti CloudDefense.AI memudahkan organisasi seperti Anda untuk menghilangkan semua kepatuhan dan memastikan kepatuhan dengan semua standar keamanan aplikasi.</p>
+<p><a target="_blank" rel="noopener" href="https://www.clouddefense.ai/owasp-top-10-vulnerabilities/">Sumber</a></p>
+
+</article>
+
+    <div class="pagenator post-pagenator">
+    
+    
+
+    
+    <p>last update time 2024-01-17</p>
+    
+    
+        <a class="extend next post-next" href="/2024/01/17/How-To-Create-Post-Hexo/">next</a>
+    
+    </div>
+
+
+    </div>
+    <div class="footer">
+        <div class="container">
+    <div class="social">
+	<ul class="social-list">
+		
+			
+				
+				
+				<li>
+					<a href="mailto:1178752402@qq.com" title="email" target="_blank">
+					<i class="fa fa-email"></i>
+					</a>
+				</li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+				<li>
+					<a href="https://github.com/CaiChenghan" title="github" target="_self">
+					<i class="fa fa-github"></i>
+					</a>
+				</li>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+				<li>
+					<a href="https://www.jianshu.com/u/565c8e790605" title="jianshu" target="_self">
+					<i class="fa fa-jianshu"></i>
+					</a>
+				</li>
+			
+		
+			
+		
+			
+		
+			
+		
+	</ul>
+</div>
+    <div class="copyright">
+        <span>
+            
+            
+            
+                © R&amp;D ICWR 2017 - 2024
+            
+        </span>
+    </div>
+    <div class="power">
+        <span>
+            Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/CaiChenghan/iLiKE">iLiKE Theme</a>
+        </span>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <!--page counter part-->
+<script>
+function addCount (Counter) {
+    url=$('.article-date').attr('href').trim();
+    title = $('.article-title').text().trim();
+    var query = new AV.Query(Counter);
+    //use url as unique idnetfication
+    query.equalTo("url",url);
+    query.find({
+        success: function(results) {
+            if (results.length>0) {
+                var counter=results[0];
+                counter.fetchWhenSave(true); //get recent result
+                counter.increment("time");
+                counter.save();
+            } else {
+                var newcounter=new Counter();
+                newcounter.set("title",title);
+                newcounter.set("url",url);
+                newcounter.set("time",1);
+                newcounter.save(null,{
+                    success: function(newcounter) {
+                        //alert('New object created');
+                    }, error: function(newcounter,error) {
+                        alert('Failed to create');
+                    }
+                })
+            }
+        },
+        error: function(error) {
+            //find null is not a error
+            alert('Error:'+error.code+" "+error.message);
+        }
+    });
+}
+$(function() {
+    var Counter=AV.Object.extend("Counter");
+    //only increse visit counting when intering a page
+    if ($('.article-title').length == 1) {
+       addCount(Counter);
+    }
+    var query=new AV.Query(Counter);
+    query.descending("time");
+    // the sum of popular posts
+    query.limit(10); 
+    query.find({
+        success: function(results) {
+                for(var i=0;i<results.length;i++) {
+                    var counter=results[i];
+                    title=counter.get("title");
+                    url=counter.get("url");
+                    time=counter.get("time");
+                    // add to the popularlist widget
+                    showcontent=title+" ("+time+")";
+                    //notice the "" in href
+                    $('.popularlist').append('<li><a href="'+url+'">'+showcontent+'</a></li>');
+                }
+            },
+        error: function(error) {
+            alert("Error:"+error.code+" "+error.message);
+        }
+    });
+});
+</script>
+</div>
+    </div>
+</body>
+</html>
