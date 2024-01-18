@@ -14,7 +14,7 @@
 <meta property="og:description" content="Disclaimer:Disclaimer ini disengaja ditempatkan di bagian atas agar dibaca terlebih dahulu. Tujuan dari pembelajaran berikut adalah untuk keperluan pembelajaran dan peningkatan keamanan pada website s">
 <meta property="og:locale" content="id_ID">
 <meta property="article:published_time" content="2024-01-18T13:08:48.000Z">
-<meta property="article:modified_time" content="2024-01-18T14:43:14.390Z">
+<meta property="article:modified_time" content="2024-01-18T14:45:38.543Z">
 <meta property="article:author" content="R&amp;D ICWR">
 <meta property="article:tag" content="In Crust We Rush, Science, Social, Technology, BrotherHood">
 <meta name="twitter:card" content="summary">
@@ -178,7 +178,7 @@
 </ul>
 <p>Contoh:</p>
 <p><code>http://contoh.com/get_name?id=1&#39; --+-</code></p>
-<p>Langkah ini dilakukan untuk mengidentifikasi apakah teknik serangan SQL Injection yang digunakan sesuai dengan karakteristik server dan database yang dimiliki oleh website target. Penting untuk dicatat bahwa pengetesan keamanan seperti ini hanya boleh dilakukan dengan izin yang sah dan etika hacker yang baik.</p>
+<p>Langkah ini dilakukan untuk mengidentifikasi apakah teknik serangan SQL Injection yang digunakan sesuai dengan karakteristik server dan database yang dimiliki oleh website target.</p>
 <p>Setelah mengidentifikasi website yang vulner, penyerang dapat menambahkan karakter balancing seperti <code>--</code> (untuk MySQL Linux Style), <code>--+</code> (untuk MySQL Windows Style), <code>#</code> ( untuk Hash URL Encode while Use), <code>--+-</code> (SQL Comment), <code>;%00</code> (Null Byte), atau <em>Backtick</em> untuk memperoleh respons yang diinginkan.</p>
 <p>Langkah selanjutnya dalam proses eksploitasi melibatkan penyuntikan query dengan tujuan mengetahui jumlah kolom pada tabel database. Contohnya, penyerang dapat menggunakan pendekatan berurutan pada parameter GET, seperti:</p>
 <ul>
@@ -195,7 +195,6 @@
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,database(),3--+-</code></li>
 </ul>
-<p>Dengan demikian, pemahaman mendalam tentang SQL Injection dan penggunaan teknik eksploitasi yang cermat menjadi kunci dalam melangkah maju dalam mengeksploitasi kerentanan keamanan pada website. Penting untuk dicatat bahwa kegiatan ini harus dilakukan dengan etika dan izin yang sah, serta bertujuan untuk pemahaman lebih lanjut dan peningkatan keamanan secara keseluruhan.</p>
 <p>Pada tahap selanjutnya eksploitasi SQL Injection setelah mendapatkan informasi ini, penyerang dapat melangkah lebih jauh dengan mengekstrak nama-nama tabel pada database target. Dengan menggunakan query berikut, penyerang dapat mengumpulkan nama-nama tabel tersebut:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() --+-</code></li>
